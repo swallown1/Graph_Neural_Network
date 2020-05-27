@@ -5,7 +5,7 @@ sys.path.append(BASE_DIR)
  
 
 from GCN.data import *
-from GCN.model import MLP
+from GCN.model import MLP,GCN
 
 import tensorflow as tf
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     flags = tf.app.flags
     FLAGS = flags.FLAGS
     flags.DEFINE_string('dataset', 'cora', 'Dataset string.')  # 'cora', 'citeseer', 'pubmed'
-    flags.DEFINE_string('model', 'dense', 'Model string.')  # 'gcn', 'gcn_cheby', 'dense'
+    flags.DEFINE_string('model', 'gcn', 'Model string.')  # 'gcn', 'gcn_cheby', 'dense'
     flags.DEFINE_float('learning_rate', 0.01, 'Initial learning rate.')
     flags.DEFINE_integer('epochs', 200, 'Number of epochs to train.')
     flags.DEFINE_integer('hidden1', 16, 'Number of units in hidden layer 1.')
