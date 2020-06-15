@@ -141,8 +141,8 @@ class GraphConvolution(Layer):
             if self.bias:
                 self.vars['bias'] = zeros([output_dim],name='bias')
 
-        if self.logging:
-            self._log_vars()
+        # if self.logging:
+        self._log_vars()
 
     def _call(self,inputs):
         x = inputs
