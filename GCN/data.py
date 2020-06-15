@@ -30,14 +30,14 @@ def load_data(data_filename):
     names = ['x', 'y', 'tx', 'ty', 'allx', 'ally', 'graph']
     objects = []
     for i in range(len(names)):
-        with open("data/cora/ind.{}.{}".format(data_filename, names[i]), 'rb') as f:
+        with open("D:\\桌面\\coder\\PaperOfGNN\\GCN/data/cora/ind.{}.{}".format(data_filename, names[i]), 'rb') as f:
             if sys.version_info > (3, 0):
                 objects.append(pkl.load(f, encoding='latin1'))
             else:
                 objects.append(pkl.load(f))
 
     x, y, tx, ty, allx, ally, graph = tuple(objects)
-    test_idx_reorder = parse_index_file("data/cora/ind.{}.test.index".format(data_filename))
+    test_idx_reorder = parse_index_file("D:\\桌面\\coder\\PaperOfGNN\\GCN/data/cora/ind.{}.test.index".format(data_filename))
     test_idx_range = np.sort(test_idx_reorder)
 
     if data_filename == 'citeseer':
